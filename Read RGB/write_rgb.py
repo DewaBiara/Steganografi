@@ -20,17 +20,21 @@ def main():
     # Buka citra cover
     cover_image = Image.open("3.bmp")
 
-    # Tentukan titik (x, y) di citra sumber untuk membaca nilai RGB
-    x_source = 100
-    y_source = 200
+    # Meminta pengguna untuk memasukkan titik (x, y)
+    x_source = int(input("Masukkan nilai x: "))
+    y_source = int(input("Masukkan nilai y: "))
 
     # Baca nilai RGB dari citra sumber
     rgb_value = read_rgb_pixel(source_image, x_source, y_source)
     print(f"Nilai RGB di ({x_source}, {y_source}): {rgb_value}")
 
-    # Tentukan titik (x, y) di citra cover untuk menulis nilai RGB
-    x_cover = 50
-    y_cover = 60
+    # Meminta pengguna untuk memasukkan titik (x, y)
+    x_cover = int(input("Masukkan nilai x: "))
+    y_cover = int(input("Masukkan nilai y: "))
+    
+    # Baca nilai RGB dari citra cover
+    rgb_value = read_rgb_pixel(cover_image, x_cover, y_cover)
+    print(f"Nilai RGB di ({x_cover}, {y_cover}): {rgb_value}")
 
     # Menulis nilai RGB ke citra cover
     write_rgb_pixel(cover_image, x_cover, y_cover, rgb_value)
